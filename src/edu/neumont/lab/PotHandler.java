@@ -42,7 +42,7 @@ public class PotHandler {
 		Close the pot
 		set CoinsInPot variable to 0
 	*/
-	public void Dispense()
+	public void dispense()
 	{
 		//Open the pot to allow coins to fall out
 		Motor.B.rotate(60);
