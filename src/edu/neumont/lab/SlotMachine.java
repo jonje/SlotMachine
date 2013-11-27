@@ -22,7 +22,7 @@ public class SlotMachine {
 	
 	public void run() {
 		//While slot machine is not deactivated…
-		while(isDeactivated()) {
+		while(!isDeactivated()) {
 			//if CoinAcceptor’s method AcceptCoin returns true,
 			if(coinAcceptor.AcceptCoin()) {
 				//if CoinsInPot is greater than MaxCoins
