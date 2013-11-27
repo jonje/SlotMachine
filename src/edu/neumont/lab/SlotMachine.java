@@ -36,6 +36,8 @@ public class SlotMachine {
 						//dispense winnings from PotHandler
 						potHandler.dispense();
 					}
+					//Display the number
+					System.out.println(gameHandler.getNumber());
 				}
 			}
 		}
