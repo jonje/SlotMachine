@@ -40,7 +40,7 @@ public class CoinAcceptor {
 		while(!t.isPressed());
 		//open coin gate with static class Motor
 		System.out.println(Motor.A.getSpeed());
-		Motor.A.rotate(-60);
+		Motor.A.rotate(-45);
 		//use LightSensor to see if a coin has been entered
 		for(int i = 0; i < 100; i++)
 		{
@@ -51,7 +51,7 @@ public class CoinAcceptor {
 			}
 		}
 		//Close coin gate
-		Motor.A.rotate(60);
+		Motor.A.rotate(45);
 		
 		//Return true or false based on the above
 		return didCoinPass;
