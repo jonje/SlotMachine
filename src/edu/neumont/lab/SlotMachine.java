@@ -25,6 +25,8 @@ public class SlotMachine {
 		while(!isDeactivated()) {
 			//if CoinAcceptor’s method AcceptCoin returns true,
 			if(coinAcceptor.AcceptCoin()) {
+				//add coin to PotHandler
+				potHandler.addCoin();
 				//if CoinsInPot is greater than MaxCoins
 				if(potHandler.getCoinsInPot() > MAX_COINS) {
 					//Dispense winnings from PotHandler
@@ -34,10 +36,15 @@ public class SlotMachine {
 					//if Gamehandler’s PlayGame returns true
 					if(gameHandler.playGame()) {
 						//dispense winnings from PotHandler
+						System.out.println("You win!!!!");
 						potHandler.dispense();
 					}
+					else
+					{
+						System.out.println("You lose!");
+					}
 					//Display the number
-					System.out.println(gameHandler.getNumber());
+					System.out.println("Your number was:" + gameHandler.getNumber());
 				}
 			}
 		}

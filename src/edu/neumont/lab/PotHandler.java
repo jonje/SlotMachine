@@ -49,7 +49,7 @@ public class PotHandler {
 		
 		//wait 1/4 second
 		try {
-			wait(250);
+			Thread.sleep(250);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
