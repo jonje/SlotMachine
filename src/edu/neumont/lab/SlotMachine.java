@@ -21,8 +21,13 @@ public class SlotMachine {
 	}
 	
 	public void run() {
+		System.out.println("Slot machine!");
+		System.out.println("Place a coin in the tray and push button to play");
+		System.out.println("A 0 or a 9 is a win, anything 1-8 is a loss");
+		
 		//While slot machine is not deactivated…
 		while(!isDeactivated()) {
+			System.out.println();
 			//if CoinAcceptor’s method AcceptCoin returns true,
 			if(coinAcceptor.AcceptCoin()) {
 				//add coin to PotHandler
@@ -30,6 +35,7 @@ public class SlotMachine {
 				//if CoinsInPot is greater than MaxCoins
 				if(potHandler.getCoinsInPot() > MAX_COINS) {
 					//Dispense winnings from PotHandler
+					System.out.println("You win the Jackpot!!!!");
 					potHandler.dispense();
 					//Else
 				} else {
@@ -46,6 +52,10 @@ public class SlotMachine {
 					//Display the number
 					System.out.println("Your number was:" + gameHandler.getNumber());
 				}
+			}
+			else
+			{
+				System.out.println("No coin detected! Sorry!");
 			}
 		}
 	}
