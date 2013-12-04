@@ -39,7 +39,7 @@ public class CoinAcceptor {
 		//wait for TouchSensor to be pressed
 		while(!t.isPressed());
 		//open coin gate with static class Motor
-		Motor.A.setSpeed(500);
+		Motor.A.setSpeed(650);
 		Motor.A.rotate(-30);
 		//use LightSensor to see if a coin has been entered
 		for(int i = 0; i < 1000; i++)

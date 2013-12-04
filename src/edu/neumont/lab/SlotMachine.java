@@ -1,5 +1,6 @@
 package edu.neumont.lab;
 import lejos.nxt.Button;
+import lejos.nxt.Sound;
 
 public class SlotMachine {
 	
@@ -36,6 +37,7 @@ public class SlotMachine {
 				if(potHandler.getCoinsInPot() > MAX_COINS) {
 					//Dispense winnings from PotHandler
 					System.out.println("You win the Jackpot!!!!");
+					Sound.beepSequenceUp();
 					potHandler.dispense();
 					//Else
 				} else {
@@ -43,11 +45,13 @@ public class SlotMachine {
 					if(gameHandler.playGame()) {
 						//dispense winnings from PotHandler
 						System.out.println("You win!!!!");
+						Sound.beepSequenceUp();
 						potHandler.dispense();
 					}
 					else
 					{
 						System.out.println("You lose!");
+						Sound.beepSequence();
 					}
 					//Display the number
 					System.out.println("Your number was:" + gameHandler.getNumber());
